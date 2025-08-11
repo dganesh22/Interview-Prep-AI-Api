@@ -32,6 +32,13 @@ app.get(`/`, async (req,res) => {
     }
 })
 
+// api paths
+app.use(`/api/auth`, require('./routes/auth.route'))
+// app.use(`/api/sessions`, require('./routes/question.route'))
+// app.use(`/api/questions`, require('./routes/question.route'))
+// app.use(`/api/ai/generate-questions`, protect, )
+// app.use(`/api/ai/generate-explaination`, protect, )
+
 // lisener
 app.listen(PORT,() => {
     connectDB()
