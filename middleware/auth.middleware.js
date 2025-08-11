@@ -10,7 +10,7 @@ const protect = async (req,res, next) => {
         if(token && token.startsWith('Bearer')) {
             token = token.split(" ")[1] // extract token
             const decoded = jwt.verify(token, process.env.SECRET_TOKEN)
-            req.user = await UserModel.findById(decoded.id).select("-password")
+            req.user = decoded.id
             next()
         } else {
             res.status(StatusCodes.UNAUTHORIZED).json({ message: "Access denied Unauthorized or no token"})
