@@ -56,7 +56,7 @@ const loginUser = async (req,res) => {
             profileImageUrl: user.profileImageUrl
         } })
     } catch (err) {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: err.message })
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message : err.message })
     }
 }
 
@@ -70,7 +70,7 @@ const getUserProfile = async (req,res) => {
 
         res.status(StatusCodes.OK).json({ user })
     } catch (err) {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: err.message })
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message : err.message })
     }
 }
 

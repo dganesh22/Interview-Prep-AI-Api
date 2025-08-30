@@ -8,7 +8,6 @@ const PORT = process.env.PORT
 
 const app = express()
 
-
 // middleware 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
@@ -34,10 +33,9 @@ app.get(`/`, async (req,res) => {
 
 // api paths
 app.use(`/api/auth`, require('./routes/auth.route'))
-// app.use(`/api/sessions`, require('./routes/question.route'))
-// app.use(`/api/questions`, require('./routes/question.route'))
-// app.use(`/api/ai/generate-questions`, protect, )
-// app.use(`/api/ai/generate-explaination`, protect, )
+app.use(`/api/sessions`, require('./routes/session.route'))
+app.use(`/api/questions`, require('./routes/question.route'))
+app.use(`/api/ai`, require("./routes/ai.route"))
 
 // lisener
 app.listen(PORT,() => {

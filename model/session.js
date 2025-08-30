@@ -10,7 +10,7 @@ const SessionSchema = new mongoose.Schema({
         required: true
     },
     experience: {
-        type: String,
+        type: Number,
         required: true
     },
     topicsToFocus: {
@@ -21,10 +21,10 @@ const SessionSchema = new mongoose.Schema({
          type: String,
         required: true
     },
-    questions: {
+    questions: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "QuestionModel"
-    }
+    }]
 }, {
     collection: "sessions",
     timestamps: true
