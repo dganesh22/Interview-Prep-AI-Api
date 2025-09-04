@@ -74,4 +74,13 @@ const getUserProfile = async (req,res) => {
     }
 }
 
-module.exports = { loginUser, registerUser, getUserProfile }
+const logoutUser = async (req,res) => {
+     try {
+
+        res.status(StatusCodes.OK).json({ message: "logout successfully" })
+    } catch (err) {
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message : err.message })
+    }
+}
+
+module.exports = { loginUser, registerUser, getUserProfile, logoutUser }

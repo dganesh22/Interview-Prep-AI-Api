@@ -25,7 +25,7 @@ You are an ai trained to generate technical interview questions and answers.
     - Candidate Experience: ${experience} years
     - Focus Topics: ${topicsToFocus}
     - Write ${numberOfQuestions} interview questions.
-    - For each question, generate a detailed but beginner-friendly answer.
+    - For each question, generate a detailed but beginner-friendly answer with code examples.
     - If the answer needs a code example, add a small code block inside.
     - Keep formating very clean.
     - Return a pure JSON array like:
